@@ -13,7 +13,7 @@ __FEATURES__
 
 
 
-INSTALATION into Fluidd
+__INSTALATION into Fluidd__
 
 
 1 Open your Fluidd web page
@@ -27,37 +27,37 @@ eg,  10.0.0.30:4408
 
 Download the following files from the printer_cfg folder.  Click on the + button above the first file in the file list.  Now add these downloaded files to your printer.
 
-macros_general.cfg
-macros_fil.cfg
-macros_test_speed.cfg
+_macros_general.cfg_
+_macros_fil.cfg_
+_macros_test_speed.cfg_
 
 
 3 Edit Printer.cfg
 
 Open your config page by clicking on the hamburger icon on the top left then clicking on the {} icon.  Now edit and add the below line to your printer.cfg under the [include box.cfg] line,
 
-[include macros_general]
+_[include macros_general]_
 
 
 4 Edit gcode_macros.cfg
 Under the variable_z_safe_pause line add,
 
-variable_e_purge_resume: 80
+_variable_e_purge_resume: 80_
 
 Then replace the following line,
 
-  {% set E = printer["gcode_macro PAUSE"].extrude|float + 80 %}
+_  {% set E = printer["gcode_macro PAUSE"].extrude|float + 80 %}_
 
 with,
 
-  {% set E = printer["gcode_macro PAUSE"].extrude|float + e_purge_resume %}
+_  {% set E = printer["gcode_macro PAUSE"].extrude|float + e_purge_resume %}_
 
 
-USAGE
+__USAGE__
 
 1 Macro Buttons
 
-1.1 FIL_RFID_AUTO_SAVE_ON 
+1.1 FIL_RFID_AUTO_SAVE_ON
 
 When clicked, on completion of a print with filament Calibation enabled, the printer will store the PA and Flow parameters.  After which, the printer will use these settings every time that same filament (with the same RFID) is used in a single or multi-color print.
 
