@@ -33,5 +33,18 @@ Open your config page by clicking on the hamburger icon on the top left then cli
 
 [include macros_general]
 
-4) Edit printer_params.cfg
+
+4) Edit gcode_macros.cfg
+
+Under the variable_z_safe_pause line add.
+
+variable_e_purge_resume: 80
+
+Replace the following line.
+
+  {% set E = printer["gcode_macro PAUSE"].extrude|float + 80 %}
+
+with,
+
+  {% set E = printer["gcode_macro PAUSE"].extrude|float + e_purge_resume %}
 
