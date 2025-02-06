@@ -2,6 +2,7 @@
 Creaity K2 Plus improvements
 
 FEATURES
+
 1) FIL_RFID_APPLY : Allow the creation of a filament DB containing PA, Flow and z_ffsets, utilizing the RFID tags.  These DB values will be applied on each filament change.  Enable FIL_FRID_AUTO_SAVE to save the PA/flow settings, after completing a Calibration print.  Also, the z_offset can be saved by enabling FIL_FRID_AUTO_SAVE_WITH_Z. When you plan to tune the z_offset, enable this before a print begins.
 2) RESUME_EXTRUDE : Reduce RESUME_EXTRUDE amount to 30mm from 80mm, as the default is excessive.
 3) M1177 : Added M1177 command to output to the Klipper log and the heads up display on the page.  Also added DUMP_VARIABLES and DUMP_SAVEVARS for debugging.
@@ -53,7 +54,9 @@ with,
 
 
 USAGE
+
 1) Macro Buttons
+
 1.1) FIL_RFID_AUTO_SAVE_ON 
 When clicked, on completion of a print with filament Calibation enabled, the printer will store the PA and Flow parameters.  After which, the printer will use these settings every time that same filament (with the same RFID) is used in a single or multi-color print.
 
