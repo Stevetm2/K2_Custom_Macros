@@ -49,11 +49,11 @@ Under the variable_z_safe_pause line add,
 
 variable_e_purge_resume: 80
 
-Then replace the following line,
+Then replace the following single line,
 
   {% set E = printer["gcode_macro PAUSE"].extrude|float + 80 %}
 
-with,
+with these two lines,
 
   {% set e_purge_resume = printer['gcode_macro PRINTER_PARAM'].e_purge_resume|int %}
 
