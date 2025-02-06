@@ -8,3 +8,30 @@ Creaity K2 Plus improvements
 4) CFS : Mods to default CFS retrude speed etc. more modest values and the cut xpos can be further to the left.
 5) BED_MESH_CALIBRATE: In preparation for adaptive bed mesh. These macros disable bed mesh calibrate, by default, and then can be enabled when needed. Waiting on the K2 Bed mesh calibration to allow a grid smaller than 9x9.
 6) CUT_PRE_RETRACT : Testing pre_cut_retract, unfortunately I haven't yet found an appropriate macro override to use.  Currently testing.
+
+
+Insulation into Fluidd
+
+1) Open your Fluid web page
+
+Open your browser with your printer IP address followed by :4408 as shown below, only with your pinter IP.
+
+eg,10.0.0.30:4408
+
+2) Adding files
+
+Download the following files from the printer_cfg folder.  Click on the + button above the first file in the list.  Now add these downloaded files to your printer.
+
+macros_general.cfg
+macros_fil.cfg
+macros_test_speed.cfg
+
+
+3) Edit Printer.cfg
+
+Open your config page by clicking on the hamburger icon on the top left then clicking on the {} icon.  Now edit and add the below line to your printer.cfg under the [include box.cfg] line.
+
+[include macros_general]
+
+4) Edit printer_params.cfg
+
