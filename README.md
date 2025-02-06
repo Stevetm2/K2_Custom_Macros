@@ -30,7 +30,7 @@ eg,  10.0.0.30:4408
 
 2 Adding files
 
-Download the following files from the printer_cfg folder.  Click on the + button above the first file in the file list.  Now add these downloaded files to your printer.
+Download the following files from the printer_cfg folder.  On the Fluidd web page, open your config page by clicking on the hamburger icon on the top left then clicking on the {} icon.  Now click on the + button above the first file in the file list.  Now add these downloaded files to your printer.
 
 _macros_general.cfg_
 _macros_fil.cfg_
@@ -39,12 +39,13 @@ _macros_test_speed.cfg_
 
 3 Edit Printer.cfg
 
-Open your config page by clicking on the hamburger icon on the top left then clicking on the {} icon.  Now edit and add the below line to your printer.cfg under the [include box.cfg] line,
+Now add the below line to your printer.cfg under the [include box.cfg] line,
 
 _[include macros_general]_
 
 
 4 Edit gcode_macros.cfg
+
 Under the variable_z_safe_pause line add,
 
 variable_e_purge_resume: 80
@@ -72,7 +73,7 @@ These settings are stored in a database file in the file list, the file is calle
 
 1.2 FIL_RFID_AUTO_SAVE_WITH_Z_ON
 
-THIS IS EXPERIMENTAL AND MAY CRASH THE NOZZLE INTO THE BED.  This does the same as FIL_RFID_AUTO_SAVE_ON only it also stored the last z_offset which you tuned in Fluid.  Be sure NOT to save your config after, or reset the z offset back to zero before any follow up print.  Again you can edit the setting for a filament in the variables_macro_settings.txt file, if you wish to set it back to zero for example.
+THIS IS EXPERIMENTAL AND MAY CRASH THE NOZZLE INTO THE BED.  This does the same as FIL_RFID_AUTO_SAVE_ON, however it also stores the last z_offset which you tuned in Fluidd.  Be sure NOT to save your config after, or alternatively, reset the z offset back to zero before any follow up print.  This stored z_offset will then be used along with the PA and Flow settings every time the filament is used.  Again you can edit the setting for a filament in the variables_macro_settings.txt file, if you wish to set it back to zero for example.  Be very careful with this feature!
 
 1.3 FIL_HEAT
 
@@ -103,4 +104,11 @@ By default the bed mesh calibrate is switched off.  So even if it is checked on 
 Work in progress, DO NOT USE
 
 
+__LIMITATIONS__
+
+1) Filament RFID Database implementation.
+
+Currently I only support a single CFS.  I also do not support the external filament roll.  These features will come in time.
+
+2) There is the possibility that creality will remove the ability for the printer to read user created RFID tags, but hopefully this will not happen.
 
