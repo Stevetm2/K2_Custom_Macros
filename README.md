@@ -93,7 +93,7 @@ This outputs all the save vars to the console output for debugging purposes.
 
 1.7. FIL_SET_PURGE_RESUME
 
-By default this is set to 10 and can be changed in the macro files, or modified temporarily via this macro button.  The originalvalue was 80 which was excessive when only pausing without a color change.
+By default this is set to 10 in these macros.  This can be permanently changed in the macro files, or modified temporarily via this macro button.  The original value was 80, which was excessive if the user was only pausing and not doing a color change.
 
 1.8. BED_MESH_CALIBRATE_FULL
 
