@@ -67,7 +67,7 @@ __USAGE__
 
 1.1. FIL_RFID_AUTO_SAVE_ON
 
-After clicking this macro, the user can initiate a print with filament Calibation enable.  On completion of that print, the printer will store the Calibrated PA and Flow parameters into the RFID filament database.  After which, the printer will use these settings every time that same filament (with the same RFID) is used in a single or multi-color print.
+After clicking this macro, the user can initiate a print with filament Calibation enabled.  On completion of that print, the printer will store the Calibrated PA and Flow parameters into the RFID filament database.  After which, the printer will use these settings every time that same filament (or filament with the same RFID) is used in a single or multi-color print.
 
 Technical note : These settings are stored in a database file in the file list, the file is called variables_macro_settings.txt and can be modified if needed (but you should allow the macros to do that work).  In the file, in json format, the right most 6 hex digits of the 16 digit RFID code represents the filament color, this will help a little to spot which filament is which.
 
