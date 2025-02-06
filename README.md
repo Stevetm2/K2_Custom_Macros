@@ -1,7 +1,7 @@
 # K2_Custom_Macros
 Creaity K2 Plus improvements
 
-__FEATURES__
+__FEATURES__. (based on FW 1.1.0.65)
 
 1. FIL_RFID_APPLY : Allow the creation of a filament DB containing PA, Flow and z_ffsets, utilizing the RFID tags.  These DB values will be applied on each filament change.  Enable FIL_FRID_AUTO_SAVE to save the PA/flow settings, after completing a Calibration print.  Also, the z_offset can be saved by enabling FIL_FRID_AUTO_SAVE_WITH_Z. When you plan to tune the z_offset, enable this before a print begins.
 
@@ -59,6 +59,10 @@ with these two lines,
   {% set e_purge_resume = printer['gcode_macro PRINTER_PARAM'].e_purge_resume|int %}
 
   {% set E = printer["gcode_macro PAUSE"].extrude|float + e_purge_resume %}
+
+5. Optional CFS parameter changes
+
+Have a look through the box.cfg file to see what I have gathered from other K2 users (check my commit history on that file).  I've not really noticed any improvements with these changes, but you may.
 
 
 __USAGE__
