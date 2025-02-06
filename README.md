@@ -56,6 +56,7 @@ Then replace the following line,
 with,
 
   {% set e_purge_resume = printer['gcode_macro PRINTER_PARAM'].e_purge_resume|int %}
+
   {% set E = printer["gcode_macro PAUSE"].extrude|float + e_purge_resume %}
 
 
