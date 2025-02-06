@@ -55,14 +55,14 @@ with,
 
 USAGE
 
-1) Macro Buttons
+1. Macro Buttons
 
-1.1) FIL_RFID_AUTO_SAVE_ON 
+1.1. FIL_RFID_AUTO_SAVE_ON 
 When clicked, on completion of a print with filament Calibation enabled, the printer will store the PA and Flow parameters.  After which, the printer will use these settings every time that same filament (with the same RFID) is used in a single or multi-color print.
 
 These settings are stored in a database file in the file list, the file is called variables_macro_settings.txt and can be modified if needed (but you should allow the macros to do that work).
 
-1.2) FIL_RFID_AUTO_SAVE_WITH_Z_ON
+1.2. FIL_RFID_AUTO_SAVE_WITH_Z_ON
 THIS IS EXPERIMENTAL AND MAY CRASH THE NOZZLE INTO THE BED.  This does the same as FIL_RFID_AUTO_SAVE_ON only it also stored the last z_offset which you tuned in Fluid.  Be sure NOT to save your config after, or reset the z offset back to zero before any follow up print.  Again you can edit the setting for a filament in the variables_macro_settings.txt file, if you wish to set it back to zero for example.
 
 1.3) FIL_HEAT
