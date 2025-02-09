@@ -1,9 +1,9 @@
 # K2_Custom_Macros
-Creaity K2 Plus improvements
+K2_FIL_DB+ : Creaity K2 Plus improvements
 
 __FEATURES__. (based on FW 1.1.0.65)
 
-1. FIL_RFID_APPLY : Allow the creation of a filament DB containing PA, Flow and z_ffsets, utilizing the RFID tags.  These DB values will be applied on each filament change.  Enable FIL_FRID_AUTO_SAVE to save the PA/flow settings, after completing a Calibration print.  Also, the z_offset can be saved by enabling FIL_FRID_AUTO_SAVE_WITH_Z. When you plan to tune the z_offset, enable this before a print begins.
+1. FIL_RFID_APPLY : Allow the creation of a filament DB containing PA, Flow and z_ffsets, utilizing the RFID tags.  These DB values will be applied on each filament change.  Enable FIL_FRID_AUTO_SAVE to save the PA/flow settings, after completing a Calibration print.  Also, the z_offset can be saved by enabling FIL_FRID_AUTO_SAVE_WITH_Z. When you plan to tune the z_offset, enable this before a print begins.  The z_offset will be applied oncw per print, for the first filament in use.
 
 2. RESUME_EXTRUDE : Reduce RESUME_EXTRUDE amount to 10mm from 80mm, as the default is excessive.
 
@@ -35,6 +35,8 @@ Download the following files from the printer_cfg folder.  On the Fluidd web pag
 _macros_general.cfg_
 _macros_fil.cfg_
 _macros_test_speed.cfg_
+
+NOTE : DO NOT directly copy over any other files on your printer.  Please follow the below instructions regarding the other required changes.
 
 
 3. Edit Printer.cfg
@@ -79,9 +81,9 @@ I would recommend disabling PA in your slicer filament settings and also setting
 
 1.2. FIL_RFID_AUTO_SAVE_WITH_Z_ON
 
-THIS IS EXPERIMENTAL AND MAY CRASH THE NOZZLE INTO THE BED, I DO NOT TAKE RESPONSIBILITY FOR BED COLLISIONS.  This has the same features as FIL_RFID_AUTO_SAVE_ON, however. on completion of the Calibration print, it also stores the last z_offset which you tuned in Fluidd.
+THIS IS EXPERIMENTAL AND MAY CRASH THE NOZZLE INTO THE BED, I DO NOT TAKE RESPONSIBILITY FOR BED COLLISIONS.  This has the same features as FIL_RFID_AUTO_SAVE_ON.  However. on completion of the Calibration print, it also stores the last z_offset which you tuned in Fluidd for that filament.
 
-Be sure NOT to save your config after it completes the print, or alternatively, reset the z_offset back to zero before any follow up print.  This stored z_offset will be used, along with the PA and Flow settings, every time the filament is used.
+Be sure NOT to save your config after it completes the print, or alternatively, reset the z_offset back to zero before any follow up print.  There are safeguards for this,, but be vigilant the first few uses.  This stored filament z_offset will ONLY be used on the first filament change of the first layer.  The the PA and Flow settings are still applied for every filament change throughoutthe print.
 
 Technical note : Again you can edit the setting for a filament in the variables_macro_settings.txt file, if you wish to set it back to zero for example.  Be very careful with this feature!
 
@@ -109,7 +111,7 @@ By default this is set to 10 in these macros.  This can be permanently changed i
 
 By default the bed mesh calibrate is switched off.  So even if it is checked on in the Creality App it will not perform a bed mesh calibration.  Use this macro to switch it on for the follow up prints.  Use BED_MESH_CALIBRATE_OFF to disable again.  
 
-1.9. BED_MESH_CALIBRATE_ADAPTIVE
+1.9. _BED_MESH_CALIBRATE_ADAPTIVE
 
 Work in progress, DO NOT USE
 
@@ -121,4 +123,7 @@ __LIMITATIONS__
 Currently I only support a single CFS.  I also do not support the external filament roll.  These features will come in time.
 
 2. There is the possibility that creality will remove the ability for the printer to read user created RFID tags, but hopefully this will not happen.
+
+3. Only tested on FW 1.1.0.65.
+
 
