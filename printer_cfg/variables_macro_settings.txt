@@ -1,3 +1,3 @@
 [Variables]
-database = {'3733000020003040': {'flow': 0.99, 'pa': 0.052, "z_offset":0.0}, '6A21010010000000': {'flow': 1.0, 'pa': 0.04, "z_offset":0.0}, '6A210100100A2989': {'flow': 0.97, 'pa': 0.056, "z_offset":0.0}, '6A21010010C12E1F': {'flow': 0.96, 'pa': 0.052, "z_offset":0.0}, '6A21010010FFFFFF': {'flow': 0.95, 'pa': 0.04, "z_offset":0.0}, 'FIL_Placeholder': {'flow': 0.99, 'pa': 0.045, "z_offset":0.0}, 'settings': {'cut_pre_retract': 15.0}}
+database = {'3733000020003040': {'flow': 0.99, 'pa': 0.052, "z_offset":-999.0}, '6A21010010000000': {'flow': 1.0, 'pa': 0.04, "z_offset":-999.0}, '6A210100100A2989': {'flow': 0.97, 'pa': 0.056, "z_offset":-999.0}, '6A21010010C12E1F': {'flow': 0.96, 'pa': 0.052, "z_offset":-999.0}, '6A21010010FFFFFF': {'flow': 0.95, 'pa': 0.04, "z_offset":-999.0}, 'FIL_Placeholder': {'flow': 0.99, 'pa': 0.045, "z_offset":-999.0}, 'settings': {'cut_pre_retract': 15.0}}
 
