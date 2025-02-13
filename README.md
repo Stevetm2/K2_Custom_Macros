@@ -1,7 +1,15 @@
 # K2_Custom_Macros
 K2_FIL_DB+ : Creaity K2 Plus improvements
 
-__FEATURES__. (based on FW 1.1.0.65)
+
+__UPDATE__ (FW 1.1.2.6 and re-install)
+
+1. The macros are now confirmed to work on FW 1.1.2.6.  So you can reinstall the macros if you upgrade.
+2. IMPORTANT : Please backup your variables_macro_settings.txt file before installing the new FW.  As well as any file you changed.
+3. Next install your new FW, and follow the install instructions below, but Do Not copy the variables_macro_settings.txt file back.  Instead, after installing, perform a K2 reboot.  After which you will have a new default variables_macro_settings.txt file.  You must then copy the text content of your backup over the default content of this file, save and then reboot the K2 again.  Now all of your calibrations will be recovered.
+
+
+__FEATURES__
 
 1. FIL_RFID_APPLY : Allow the creation of a filament DB containing PA, Flow and z_ffsets, utilizing the RFID tags.  These DB values will be applied on each filament change.  Enable FIL_FRID_AUTO_SAVE to save the PA/flow settings, after completing a Calibration print.  Also, the z_offset can be saved by enabling FIL_FRID_AUTO_SAVE_WITH_Z. When you plan to tune the z_offset, enable this before a print begins.  The z_offset will be applied oncw per print, for the first filament in use.
 
@@ -36,7 +44,7 @@ _macros_general.cfg_
 _macros_fil.cfg_
 _macros_test_speed.cfg_
 
-NOTE : DO NOT directly copy over any other files on your printer.  Please follow the below instructions regarding the other required changes.
+NOTE : DO NOT directly copy over any other files on your printer.  Please follow the below instructions regarding the other required changes.  Also, don't be tempted to copy my variables_macro_settings.txt file. A new one will be generated on first K2 reboot after instalation, ready to be populated with your filament calibrations.
 
 
 3. Edit Printer.cfg
@@ -122,8 +130,8 @@ __LIMITATIONS__
 
 Currently I only support a single CFS.  I also do not support the external filament roll.  These features will come in time.
 
-2. There is the possibility that creality will remove the ability for the printer to read user created RFID tags, but hopefully this will not happen.
+2. There is the possibility that creality will remove the ability for the printer to read user created RFID tags, but hopefully this will not happen.  User generated encrypted tags have been confirmed to work with FW 1.1.2.6 and below.
 
-3. Only tested on FW 1.1.0.65.
+3. Currently tested on FW 1.1.0.65 and 1.1.2.6.
 
 
