@@ -83,17 +83,17 @@ __USAGE__
 
 After clicking this macro, the user can initiate a print with filament Calibation enabled.  On completion of that print, the printer will store the Calibrated PA and Flow parameters into the RFID filament database.  After which, the printer will use these settings every time that same filament (or filament with the same RFID) is used in a single or multi-color print.
 
-Technical note : These settings are stored in a database file in the file list, the file is called variables_macro_settings.txt and can be modified if needed (but you should allow the macros to do that work).  In the file, in json format, the right most 6 hex digits of the 16 digit RFID code represents the filament color, this will help a little to spot which filament is which.
+Technical note : These settings are stored in a database file which is in json format.  This file is in the config file list and is called variables_macro_settings.txt.  It can be modified if needed, to allow you to enter your own PA and Flow values (but you should allow the macros to do that work).  In the file the right most 6 hex digits, of the 16 digit RFID code, represents the filament color, this will help a little to spot which filament is which.
 
-I would recommend disabling PA in your slicer filament settings and also setting the filament flow to 0.95 (95%) in the slicer filament settings.
+I would recommend disabling PA in your slicer filament settings and also setting the filament flow to 0.95 (95%) in the slicer filament settings as I do.
 
 1.2. FIL_RFID_AUTO_SAVE_WITH_Z_ON
 
-THIS IS EXPERIMENTAL AND MAY CRASH THE NOZZLE INTO THE BED, I DO NOT TAKE RESPONSIBILITY FOR BED COLLISIONS.  This has the same features as FIL_RFID_AUTO_SAVE_ON.  However. on completion of the Calibration print, it also stores the last z_offset which you tuned in Fluidd for that filament.
+THIS IS EXPERIMENTAL AND MAY CRASH THE NOZZLE INTO THE BED, I DO NOT TAKE RESPONSIBILITY FOR BED COLLISIONS.  This has the same features as FIL_RFID_AUTO_SAVE_ON.  However, on completion of the Calibration print, it also stores the last z_offset which you tuned in Fluidd for that filament.
 
-Be sure NOT to save your config after it completes the print, or alternatively, reset the z_offset back to zero before any follow up print.  There are safeguards for this,, but be vigilant the first few uses.  This stored filament z_offset will ONLY be used on the first filament change of the first layer.  The the PA and Flow settings are still applied for every filament change throughoutthe print.
+Be sure NOT to save your printer config after it completes the print, or alternatively, reset the z_offset back to zero before any follow up print.  There are safeguards, but be vigilant the first few uses.  This stored filament z_offset will ONLY be used on the first filament change of the first layer.  The the PA and Flow settings are still applied for every filament change throughout the print.
 
-Technical note : Again you can edit the setting for a filament in the variables_macro_settings.txt file, if you wish to set it back to zero for example.  Be very careful with this feature!
+Technical note : Again you can edit the setting for a filament in the variables_macro_settings.txt file, if you wish to set the z offset back to zero for example.  Be very careful with this feature!
 
 1.3. FIL_HEAT
 
