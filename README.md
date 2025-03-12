@@ -52,7 +52,7 @@ NOTE : DO NOT directly copy over any other files on your printer.  Please follow
 Now add the below line to your printer.cfg under the [include box.cfg] line,
 
 ```
-_[include macros_general]_
+[include macros_general]
 ```
 
 
@@ -72,7 +72,8 @@ Then replace the following single line,
 
 with these two lines,
 
-```  {% set e_purge_resume = printer['gcode_macro PRINTER_PARAM'].e_purge_resume|int %}
+```
+  {% set e_purge_resume = printer['gcode_macro PRINTER_PARAM'].e_purge_resume|int %}
 
   {% set E = printer["gcode_macro PAUSE"].extrude|float + e_purge_resume %}
 ```
