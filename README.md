@@ -40,9 +40,9 @@ eg,  10.0.0.30:4408
 
 Download the following files from the printer_cfg folder.  On the Fluidd web page, open your config page by clicking on the hamburger icon on the top left then clicking on the {} icon.  Now click on the + button above the first file in the file list.  Now add these downloaded files to your printer.
 
-_macros_general.cfg_
-_macros_fil.cfg_
-_macros_test_speed.cfg_
+- _macros_general.cfg_
+- _macros_fil.cfg_
+- _macros_test_speed.cfg_
 
 NOTE : DO NOT directly copy over any other files on your printer.  Please follow the below instructions regarding the other required changes.  Also, don't be tempted to copy my variables_macro_settings.txt file. A new one will be generated on first K2 reboot after instalation, ready to be populated with your filament calibrations.
 
@@ -51,24 +51,31 @@ NOTE : DO NOT directly copy over any other files on your printer.  Please follow
 
 Now add the below line to your printer.cfg under the [include box.cfg] line,
 
+```
 _[include macros_general]_
+```
 
 
 4. Edit gcode_macros.cfg
 
 Under the variable_z_safe_pause line add,
 
+```
 variable_e_purge_resume: 80
+```
 
 Then replace the following single line,
 
+```
   {% set E = printer["gcode_macro PAUSE"].extrude|float + 80 %}
+```
 
 with these two lines,
 
-  {% set e_purge_resume = printer['gcode_macro PRINTER_PARAM'].e_purge_resume|int %}
+```  {% set e_purge_resume = printer['gcode_macro PRINTER_PARAM'].e_purge_resume|int %}
 
   {% set E = printer["gcode_macro PAUSE"].extrude|float + e_purge_resume %}
+```
 
 5. Optional CFS parameter changes
 
