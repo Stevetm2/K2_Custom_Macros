@@ -11,7 +11,7 @@ __UPDATE__ (FW 1.1.2.6 and re-install)
 
 __FEATURES__
 
-1. FIL_RFID_APPLY : Allow the creation of a filament DB entrys containing PA, Flow and z_ffsets, utilizing the RFID tags.  These stored DB values will be applied on each filament change, for each RFID tagged filament.  Enable FIL_RFID_AUTO_SAVE to save the PA/flow settings, after completing a Calibration print.  Also, the z_offset can be saved by enabling FIL_RFID_AUTO_SAVE_WITH_Z. When you plan to tune the z_offset, enable this before a print begins.  The z_offset will be applied oncw per print, for the first filament in use.
+1. FIL_RFID_APPLY : Allow the creation of a filament DB entries containing PA, Flow and z_ffsets, utilizing the RFID tags.  These stored DB values will be applied on each filament change, for each RFID tagged filament.  Enable FIL_RFID_AUTO_SAVE to save the PA/flow settings, after completing a Calibration print.  Also, the z_offset can be saved by enabling FIL_RFID_AUTO_SAVE_WITH_Z. When you plan to tune the z_offset, enable this before a print begins.  The z_offset will be applied oncw per print, for the first filament in use.
 
 2. RESUME_EXTRUDE : Reduce RESUME_EXTRUDE amount to 10mm from 80mm, as the default is excessive.  Also user editable.
 
