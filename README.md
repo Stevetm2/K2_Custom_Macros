@@ -132,6 +132,11 @@ By default the bed mesh calibrate is switched off.  By using this feature, even 
 Work in progress, DO NOT USE
 
 
+1.10. RFID TAG WRITER
+
+I use this tag writer from the Google Play Store : https://play.google.com/store/apps/details?id=dngsoftware.spoolid
+
+
 __LIMITATIONS__
 
 1. Filament RFID Database implementation.
