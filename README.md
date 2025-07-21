@@ -1,5 +1,5 @@
 # K2_Custom_Macros
-K2_FIL_DB+ : Creaity K2 Plus improvements.
+__K2_FIL_DB+ : Creaity K2 Plus improvements.__
 
 __OVERVIEW__
 
@@ -9,17 +9,18 @@ __UPDATE__ 7/20/25 New Version
 
 1. There is now support for multiple CFS's, performiing settings changes during any filament change.
 
-2. There is now support for side spool RFID reading.  Just swipe the filaments RFID on the side of the printer, just before loading the filament, then on the next Start Print it will set the approprite PA and Flow settings for the loaded side spool.
+2. There is now support for side spool RFID reading.
+   * Just swipe the filaments RFID on the side of the printer, just before loading the filament, then on the next Start Print it will set the approprite PA and Flow settings for the loaded side spool.
 
-3. There are now 'helper' popup dialog macros (SHOW_PROMPT_) for :
+5. There are now 'helper' popup dialog macros (SHOW_PROMPT_) for :
 
-3.1. Bed Home Soak      : For various temps - SHOW_PROMPT_BED_TEMP_SOAK
+   * Bed Home Soak      : For various temps - SHOW_PROMPT_BED_TEMP_SOAK
 
-3.2. Bed Mesh Calibrate : Enabe/disable for next print - SHOW_PROMPT_BED_MESH_CALIBRATE
+   * Bed Mesh Calibrate : Enabe/disable for next print - SHOW_PROMPT_BED_MESH_CALIBRATE
 
-3.3. Filament Settings  : PA and Flow save triggering for RFID filaments - SHOW_PROMPT_FIL_SETTINGS
+   * Filament Settings  : PA and Flow save triggering for RFID filaments - SHOW_PROMPT_FIL_SETTINGS
 
-3.2. Filament Status    : Show the status of what slots are loaded and their RFID tag data.  As well filament sensor status. - SHOW_PROMPT_FIL_SETTINGS
+   * Filament Status    : Show the status of loaded slots and their RFID tag data.  As well filament sensor status. - SHOW_PROMPT_FIL_SETTINGS
 
 
 __UPDATE__ (FW 1.1.2.6 and re-install)
