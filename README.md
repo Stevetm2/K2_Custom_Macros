@@ -3,7 +3,7 @@ __K2_FIL_DB+ : Creaity K2 Plus improvements.__
 
 __OVERVIEW__
 
-Allows saving of filament PA and Flow settings, with Z offset if requested, to an internal FIL_DB.  When you enable the save feature as well as the Creality K2 filament calibration step for PA and Flow, this info will be stored to this FIL_DB.  The macros will then use these values automatically during each filament change.  This solved a problem I was seeing, I found that these values did not get updated unless you used Creality filament, until now!
+The provided macros allows saving of filament PA and Flow settings, with Z offset if requested, to an internal FIL_DB.  When you enable the save feature, as well as the Creality K2 filament calibration step for PA and Flow, the macros will store this info to this FIL_DB.  The macros will then use these values automatically during each filament change.  This solved a problem I was seeing, I found that these values did not updated for non-Creality filament, until now!
 
 __UPDATE__ 7/20/25 New Version
 
@@ -12,7 +12,9 @@ __UPDATE__ 7/20/25 New Version
 2. There is now support for side spool RFID reading.
    * Just swipe the filaments RFID on the side of the printer, just before loading the filament, then on the next Start Print it will set the approprite PA and Flow settings for the loaded side spool.
 
-5. There are now 'helper' popup dialog macros (SHOW_PROMPT_) for :
+3. CUT_PRE_RETRACT is now supported.  The macros now perform a 20mm retraction before each filament change, which saves filament.
+
+4. There are now 'helper' popup dialog macros (SHOW_PROMPT_) for :
 
    * Bed Home Soak      : For various temps - SHOW_PROMPT_BED_TEMP_SOAK
 
@@ -26,7 +28,7 @@ __UPDATE__ 7/20/25 New Version
 __UPDATE__ (FW 1.1.2.6 and re-install)
 
 1. The macros are now confirmed to work on FW 1.1.2.6.  So you can reinstall the macros if you upgrade.
-2. IMPORTANT : Please backup your variables_macro_settings.txt file before installing the new FW.  As well as any file you changed.
+2. IMPORTANT : Please backup your variables_macro_settings.txt file before installing the new FW.  As well as any file you changed.  Note, a future FW update or hardware changes may require further filament tuning.
 3. Next install your new FW, and follow the install instructions below, but Do Not copy the variables_macro_settings.txt file back.  Instead, after installing, perform a K2 reboot.  After which you will have a new default variables_macro_settings.txt file.  You must then copy the text content of your backup over the default content of this file, save and then reboot the K2 again.  Now all of your calibrations will be recovered.
 
 
@@ -42,7 +44,7 @@ __FEATURES__
 
 5. BED_MESH_CALIBRATE: In preparation for adaptive bed mesh. These macros disable bed mesh calibrate, by default, which can then can be enabled as needed. Currently waiting on the K2 Bed mesh calibration code to allow a grid smaller than 9x9 before we can use the adaptive meshing.
 
-6. CUT_PRE_RETRACT : Testing pre_cut_retract, unfortunately I haven't yet found an appropriate macro override to use.  Currently testing.
+6. CUT_PRE_RETRACT : Testing pre_cut_retract, unfortunately I haven't yet found an appropriate macro override to use.  Currently testing.  See UPDATE above.
 
 
 
@@ -110,17 +112,17 @@ __USAGE__
 
 1.1. FIL_RFID_AUTO_SAVE_ON
 
-After clicking this macro, the user can then initiate a print which utizes the built in K2 filament Calibation feature.  On completion of this print, with Clibration enbled, the printer/macros will store the Calibrated PA and Flow parameters into the RFID filament database.  After which, the printer will use these settings every time that same filament (or filament with the same RFID) is used in a single or multi-color print.
+When the user clicks this macro and then initiates a print which utizes the built in K2 filament Calibation feature, the PA and Flow calibrations will be performed.  On completion of this print, with this Clibration enbled, the macros will automatically store the Calibrated PA and Flow parameters into the RFID filament database.  After which, the printer will use these settings every time that same filament (or filament with the same RFID) is used in a single or multi-color print.
 
-Technical note : These settings are stored in a database file which is in json format.  This file is in the config file list and is called variables_macro_settings.txt.  It can be modified if needed, to allow you to enter your own PA and Flow values (but you should allow the macros to do that work).  In the file the right most 6 hex digits, of the 16 digit RFID code, represents the filament color, this will help a little to spot which filament is which.
+Technical note : These settings are stored in a database file which is in json format.  This file is stored in the config file folder on the printer, named variables_macro_settings.txt.  It can be modified if needed, allowing you to enter your own PA and Flow values (but you should allow the macros to do that work automatically).  In the file, the right most 6 hex digits of each 16 digit RFID code, represents the filament color, this will help you a little to recognize a filament for editing.
 
-I would recommend disabling PA in your slicer filament settings and also setting the filament flow to 0.95 (95%) in the slicer filament settings as I do.
+I would recommend disabling PA in your slicer filament settings (as it will override those slicer values) and also set the filament flow to 0.95 (95%) in the slicer filament settings as I do.
 
 1.2. FIL_RFID_AUTO_SAVE_WITH_Z_ON
 
 THIS IS EXPERIMENTAL AND MAY CRASH THE NOZZLE INTO THE BED, I DO NOT TAKE RESPONSIBILITY FOR BED COLLISIONS.  This has the same features as FIL_RFID_AUTO_SAVE_ON.  However, on completion of the Calibration print, it also stores the last z_offset, which you tuned in Fluidd for that filament.
 
-Be sure NOT to save your printer config after it completes the print, or alternatively, reset the z_offset back to zero before any follow up print.  There are safeguards, but be vigilant the first few uses.  This stored filament z_offset will ONLY be used on the first filament change of the first layer.  The the PA and Flow settings are still applied for every filament change throughout the print.
+Be sure NOT to save your printer config after it completes the print, or alternatively, confirm that the z_offset is reset back to zero before any follow up print.  There are safeguards, but be vigilant the first few times you use the save z offset feature.  This stored filament z_offset will ONLY be used on the first filament change of the first layer.  The the PA and Flow settings are still applied for every filament change throughout the print.
 
 Technical note : Again, you can edit the setting for a filament in the variables_macro_settings.txt file, if you wish to set the z offset back to zero for example.  Be very careful with this feature!
 
@@ -162,10 +164,10 @@ __LIMITATIONS__
 
 1. Filament RFID Database implementation.
 
-Currently I only support a single CFS.  I also do not support the external filament roll.  These features will come in time.
+Currently I only support a single CFS.  I also do not support the external filament roll.  These features will come in time.  See UPDATE above.  
 
 2. There is the possibility that creality will remove the ability for the printer to read user created RFID tags, but hopefully this will not happen.  User generated encrypted tags have been confirmed to work with FW 1.1.2.6 and below.
 
-3. Currently tested on FW 1.1.0.65 and 1.1.2.6.
+3. Currently tested on FW 1.1.0.65 and 1.1.2.6.  See UPDATE above.
 
 
