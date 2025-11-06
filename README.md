@@ -3,7 +3,9 @@ __K2_FIL_DB+ : Creaity K2 Plus improvements.__
 
 __OVERVIEW__
 
-The provided macros allows saving of filament PA and Flow settings, with Z offset if requested, to an internal FIL_DB.  When you enable the save feature, as well as the Creality K2 filament calibration step for PA and Flow, the macros will store this info to this FIL_DB.  The macros will then use these values automatically during each filament change.  This solved a problem I was seeing, I found that these values did not updated for non-Creality filament, until now!
+The provided macros allows saving of filament PA and Flow settings, with Z offset if requested, to an internal FIL_DB.  To be recalled on each future filament change.
+
+When you enable the save feature, and enable the Creality K2 filament PA and Flow calibration options, these PA and Flow values will be stored to this custom FIL_DB.  The macros will then automatically use these values during each filament change.  This solved a problem I was seeing, I found that these values did not updated for non-Creality filament, until now!
 
 __UPDATE__ 7/20/25 New Version
 
