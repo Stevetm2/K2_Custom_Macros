@@ -154,6 +154,10 @@ By default the bed mesh calibrate is switched off.  By using this feature, even 
 
 1.9. _BED_MESH_CALIBRATE_ADAPTIVE
 
+__IMPORTANT__
+
+You will see that in the macros_fil.cnf file there is support for 2 CFS's.  I have defined T0 thru T7.  However if you have only one CFS removed defines for T4 thru T7 as I have now noticed that if they remain the Creality CLowd app has problems connecting to the printer.  Conversley, if you have than three CFS's just define the remaining T8 thru T12, if you have four CFS's then define T8 thru T16, in the same pattern as in the file.  NOTE : dont make any typo's :)
+
 Work in progress, DO NOT USE
 
 
@@ -164,9 +168,7 @@ I use this tag writer from the Google Play Store : https://play.google.com/store
 
 __LIMITATIONS__
 
-1. Filament RFID Database implementation.
-
-Currently I only support a single CFS.  I also do not support the external filament roll.  These features will come in time.  See UPDATE above.  
+1. Filament RFID Database implementation. 
 
 2. There is the possibility that creality will remove the ability for the printer to read user created RFID tags, but hopefully this will not happen.  User generated encrypted tags have been confirmed to work with FW 1.1.2.6 and below.
 
