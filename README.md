@@ -107,6 +107,10 @@ with these two lines,
 
 Have a look through the box.cfg file to see what I have gathered from other K2 users (check my commit history on that file).  I've not really noticed any specific improvements with these changes, but you may.  At the same time, I've never had filament grinding when using these settings, which is common for other K2 users.
 
+__INSTALATION - NUMBER OF CONNECTED CFS__
+
+You will see that in the macros_fil.cfg file there is support for 2 CFS's (search for T0.1 for the first macro of the 8).  I have defined T0 thru T7.  However, if you have only one CFS then remove the macro defines for tools T4 thru T7.  I have now noticed that if they remain the Creality Clowd app has problems connecting to the printer.  Conversely, if you have three CFS's, just define the remaining T8 thru T12, or if you have four CFS's then define T8 thru T16, in the same pattern as in the file.  NOTE : dont make any typo's :)
+
 
 __USAGE__
 
@@ -154,11 +158,8 @@ By default the bed mesh calibrate is switched off.  By using this feature, even 
 
 1.9. _BED_MESH_CALIBRATE_ADAPTIVE
 
-__IMPORTANT__
-
-You will see that in the macros_fil.cfg file there is support for 2 CFS's (search for T0.1 for the first macro).  I have defined T0 thru T7.  However if you have only one CFS removed defines for T4 thru T7 as I have now noticed that if they remain the Creality CLowd app has problems connecting to the printer.  Conversley, if you have than three CFS's just define the remaining T8 thru T12, if you have four CFS's then define T8 thru T16, in the same pattern as in the file.  NOTE : dont make any typo's :)
-
 Work in progress, DO NOT USE
+
 
 
 __RFID TAG WRITER__
