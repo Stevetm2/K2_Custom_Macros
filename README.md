@@ -156,7 +156,7 @@ By default the bed mesh calibrate is switched off.  By using this feature, even 
 
 __IMPORTANT__
 
-You will see that in the macros_fil.cnf file there is support for 2 CFS's.  I have defined T0 thru T7.  However if you have only one CFS removed defines for T4 thru T7 as I have now noticed that if they remain the Creality CLowd app has problems connecting to the printer.  Conversley, if you have than three CFS's just define the remaining T8 thru T12, if you have four CFS's then define T8 thru T16, in the same pattern as in the file.  NOTE : dont make any typo's :)
+You will see that in the macros_fil.cfg file there is support for 2 CFS's (search for T0.1 for the first macro).  I have defined T0 thru T7.  However if you have only one CFS removed defines for T4 thru T7 as I have now noticed that if they remain the Creality CLowd app has problems connecting to the printer.  Conversley, if you have than three CFS's just define the remaining T8 thru T12, if you have four CFS's then define T8 thru T16, in the same pattern as in the file.  NOTE : dont make any typo's :)
 
 Work in progress, DO NOT USE
 
