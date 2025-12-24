@@ -2,10 +2,10 @@
 
 ## General
 
-This script will modify a saved Creality K2 GCode file from Orca Slice, to allow it to be more compatible with Creality Cloud App for printing using your phone.
+This script will modify a saved Creality K2 GCode file from Orca Slicer, to allow it to be more compatible with the Creality Cloud App for printing using your phone or tablet.
 
-- Remove unused filaments from the list of mapped filaments.  This allows you to have PLA, PETG etc in your filament list in Orca but not have them currently loaded in your CFS.  Then on opening Creality Cloud app only the filamnet which are in use for your gcode file will appear as mappable filaments before the print is started.
-- Reset the Filament Flush Multiplier to 1.0.  I have noticed that smaller values cause strange flushing behaviour, so by setting your value to 0.5 in the slicer and clicking calculate will reduce each filament combination correctly, then this scrit will reset the multiplier to 1.0 so the printer uses those values directly with no fiurther modifications.
+- It will remove unused filaments from the list of mapped filaments in the app.  This allows you to have PLA, PETG etc in your filament list in Orca but not have them currently loaded in your CFS.  Then when selecting the file to print in Creality Cloud App, only the filament/s which are in use in that file will appear as mappable filaments, before the print is started.
+- It resets the Filament Flush Multiplier to 1.0.  I have noticed that smaller values for this cause strange flushing behaviour, so by setting your value to 0.5 in the slicer and clicking calculate will reduce each filament combination correctly, then this scrit will reset the multiplier to 1.0 so the printer uses those individual values directly, with no fiurther modifications.
 - Other features may be added in the future.
 
 
