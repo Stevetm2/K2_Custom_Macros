@@ -24,6 +24,6 @@ This script, when copied to the K2 extras foder, will.
 
 ## Usage
 
-Set the Printer Agent to Moonraker in the Orca network settings for your K2 printer, and save you printer.  A new Filament icon will appear on the Filament tab.  Click that so sync the Filaments.
+In OrcaSlicer, set the Printer Agent to Moonraker in the Orca network settings for your K2 printer, and save your printer config.  A new Filament Sync icon will appear on the Filament tab.  Click that to sync the Filaments from your K2 to OrcaSlicer.
 
-In preferences you can choos enabling sync of just filament colors or colors and type.
+In preferences you can choose enabling sync of just the filament colors or both colors and filament type.
