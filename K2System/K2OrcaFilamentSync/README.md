@@ -12,9 +12,10 @@ This script, when copied to the K2 extras foder, will.
 
 Add this script to the below K2 klipper folder, using WinSCP or your favorate copy-over-scp program.
 
-''sh
+```sh
 /usr/share/klipper/klippy/extras
-''
+```
+
 
 
 ## Usage
