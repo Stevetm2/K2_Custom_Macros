@@ -10,7 +10,7 @@ This script, when copied to the K2 extras foder, will.
 
 ## Setup
 
-Add this script to the below K2 klipper folder, using WinSCP or your favorate copy-over-scp program.
+Add the mmu.py script to the below K2 klipper folder, using WinSCP or your favorate copy-over-scp program.
 
 ```sh
 /usr/share/klipper/klippy/extras
