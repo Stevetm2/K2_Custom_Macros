@@ -1,11 +1,12 @@
-# K2 Orca Filament Sync
+# K2 OrcaSlicer Filament Sync
 
 ## General
 
-This script, when copied to the K2 extras foder, will.
+This script, when copied to the K2 extras folder, will.
 
-- Simulate the return vales from an MMU equiped printer, allowing Orca to sync te CFS filament colors an types.
+- Simulate the return vales from an MMU equipped printer, allowing Orca to sync the CFS filament colors an types.
 - Other features may be added in the future.
+- It has been tested on the K2 Plus and should work on other K2 printers.  It may also work on the K1 with CFS, if installed to the correct folder.
 
 
 ## Setup
