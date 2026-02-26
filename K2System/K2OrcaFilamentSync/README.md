@@ -6,6 +6,7 @@ This script, when copied to the K2 extras folder, will.
 
 - Simulate the return vales from an MMU equipped printer, allowing Orca to sync the CFS filament colors and types.
 - This allows for better Filament Flush values to be auto calculated, especially when combined with custom RFID tagged filament spools.
+- It works with version v2.3.2-beta2 of OrcaSlicer, and will be test with future versions as they are released.
 - It has been tested on the K2 Plus and should work on other K2 printers.  It may also work on the K1 with CFS, if installed to the correct folder.
 - Other features may be added in the future.
 
