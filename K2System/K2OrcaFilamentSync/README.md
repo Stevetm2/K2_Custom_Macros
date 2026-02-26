@@ -13,7 +13,8 @@ This script, when copied to the K2 extras folder, will.
 
 ## Setup
 
-- Add the mmu.py script to the below K2 klipper folder, using WinSCP or your favorate "copy using SCP" program.
+- Enable root access on your K2 printr.
+- Add the supplied mmu.py script to the below K2 klipper folder, using WinSCP or your favorate "copy using SCP" program.
 
 ```sh
 /usr/share/klipper/klippy/extras
