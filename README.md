@@ -7,6 +7,12 @@ The provided macros allows saving of filament PA and Flow settings, with Z offse
 
 When you enable the save feature, and enable the Creality K2 filament PA and Flow calibration options on the printer, these PA and Flow values will be stored to this custom FIL_DB.  The macros will then automatically use these values during each filament change.  This solved a problem I was seeing, I found that these values did not updated for non-Creality filament, until now!
 
+
+__UPDATE__ 5/25/25 FW
+
+1. Added support for FW 1.5.5.2 and above.  See new install step below.
+2. When updating to a new firmware, remember to follow the FW update info for FW 1.1.4.2 for any FW update.
+
 __UPDATE__ 7/20/25 New Version
 
 1. There is now support for multiple CFS's, performiing settings changes during any filament change.
@@ -29,7 +35,7 @@ __UPDATE__ 7/20/25 New Version
 
 __UPDATE__ (FW 1.1.2.6 and re-install)
 
-1. The macros are now confirmed to work on FW 1.1.2.6.  So you can reinstall the macros if you upgrade.
+1. Do the below for any FW update!  The macros are now confirmed to work on FW 1.1.2.6.  So you can reinstall the macros if you upgrade.
 2. IMPORTANT : Please backup your variables_macro_settings.txt file before installing the new FW.  As well as any file you changed.  Note, a future FW update or hardware changes may require further filament tuning.
 3. Next install your new FW, and follow the install instructions below, but Do Not copy the variables_macro_settings.txt file back.  Instead, after installing, perform a K2 reboot.  After which you will have a new default variables_macro_settings.txt file.  You must then copy the text content of your backup over the default content of this file, save and then reboot the K2 again.  Now all of your calibrations will be recovered.
 
@@ -103,7 +109,27 @@ with these two lines,
   {% set E = printer["gcode_macro PAUSE"].extrude|float + e_purge_resume %}
 ```
 
-5. Optional CFS parameter changes
+5. FW 1.5.5.2+ Only.
+
+In the box.cfg file make an edit to the M8200 macro.  Add the FIL_RFID_APPLY command as seen below.
+
+...
+  {% if params.L is defined %}
+    # 料盒进料动作：M8200 L I[next] p1
+    {% set I_param = params.I|int %}
+    {% set addr = (I_param / 4 + 1)|int|string %}
+    {% set num_map = ['A', 'B', 'C', 'D'] %}
+    {% set num = (I_param % 4)|int %}
+    {% set tnn = 'T' + addr + num_map[num] %}
+    {action_respond_info("tnn: %s" % tnn)}
+    CR_BOX_EXTRUDE TNN={tnn}
+    SET_GCODE_VARIABLE MACRO=M8200 VARIABLE=tnn VALUE='"{tnn}"'
+    CR_BOX_WASTE
+    FIL_RFID_APPLY TYPE=GET TOOL={I_param}
+  {% endif %}
+...
+
+6. Optional CFS parameter changes
 
 Have a look through the box.cfg file to see what I have gathered from other K2 users (check my commit history on that file).  I've not really noticed any specific improvements with these changes, but you may.  At the same time, I've never had filament grinding when using these settings, which is common for other K2 users.
 
