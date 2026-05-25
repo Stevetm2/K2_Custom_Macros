@@ -112,9 +112,10 @@ with these two lines,
 5. FW 1.5.5.2+ Only.
 
 In the box.cfg file make an edit to the M8200 macro.  Add the FIL_RFID_APPLY command as seen below,
-...
+
+```
 {% if params.L is defined %}
-    # 料盒进料动作：M8200 L I[next] p1
+    # M8200 L I[next] p1
     {% set I_param = params.I|int %}
     {% set addr = (I_param / 4 + 1)|int|string %}
     {% set num_map = ['A', 'B', 'C', 'D'] %}
@@ -126,7 +127,7 @@ In the box.cfg file make an edit to the M8200 macro.  Add the FIL_RFID_APPLY com
     CR_BOX_WASTE
     FIL_RFID_APPLY TYPE=GET TOOL={I_param}
 {% endif %}
-...
+```
 
 
 6. Optional CFS parameter changes
