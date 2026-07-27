@@ -11,7 +11,7 @@ When you enable the save feature, and enable the Creality K2 filament PA and Flo
 __UPDATE__ 5/25/25 FW
 
 1. Added support for FW 1.5.5.2 and above.  See new install step below.
-2. When updating to a new firmware, remember to follow the FW update info for FW 1.1.4.2 for any FW update.
+2. When updating to a new firmware, remember to follow the FW update info for FW 1.1.2.6 for any FW update.
 
 __UPDATE__ 7/20/25 New Version
 
